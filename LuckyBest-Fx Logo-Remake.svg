@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4169" height="2953" viewBox="0 0 4169 2953">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-size: 51.648px;
+        text-transform: uppercase;
+      }
+
+      .cls-3, .cls-4 {
+        text-anchor: middle;
+        font-family: Montserrat;
+      }
+
+      .cls-4 {
+        font-size: 63.423px;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+  <path id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-1" d="M392.643,1188.08L877.736,1294.8c3.4,0.74,6.163,3.85,6.163,6.94v530.93c0,3.09-2.759,4.98-6.163,4.23L392.643,1730.19c-3.4-.75-6.163-3.86-6.163-6.95V1192.31C386.48,1189.23,389.239,1187.33,392.643,1188.08Z"/>
+  <path class="cls-2" d="M315.866,1701.69l603.295-428.21,35.352,49.8-603.3,428.21Z"/>
+  <text id="LuckyBest" class="cls-3" transform="matrix(6.454, 0, 0, 6.454, 2092.2, 1666.413)"><tspan x="0">LuckyBest</tspan></text>
+  <path class="cls-1" d="M3217.7,1547.97h79v19h-79v-19Z"/>
+  <text id="Fx" class="cls-4" transform="matrix(6.349, 0, 0, 6.349, 3569.973, 1668.734)"><tspan x="0">Fx</tspan></text>
+</svg>
