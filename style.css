@@ -1265,8 +1265,8 @@ h1, h2, h3, h4, h5, h6, figure {
   border: 2px solid black;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: #fc6a97 !important;
-  border-color: #fc6a97 !important;
+  background: #005aff !important;
+  border-color: #005aff !important;
 }
 .btn-primary.btn-outline {
   background: transparent;
@@ -1602,6 +1602,66 @@ svg{
   color: #000;
 }
 
+/* Call to action */
+  
+.cta {
+  text-align: center;
+  margin: 100px auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(bg.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 100px 0;
+  border-radius: 10px;
+
+}
+
+.cta h1 {
+  color: #fff;
+  margin-bottom: 40px;
+  padding: 0;
+  font-size: 35px;
+}
+
+.cta p{
+  color: white;
+}
+
+.cta .hero-btn-1{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    margin-top: 30px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+@media(max-wdith: 700px) {
+  .cta h1 {
+    font-size: 10px;
+  }
+
+  .cta .hero-btn-1{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    margin-top: 30px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+}
+
+.desc h3{
+  color: white;
+}
 
 
 
