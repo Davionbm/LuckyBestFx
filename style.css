@@ -583,7 +583,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-bg-section {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgb(0 90 255);
+  color: white;
 }
 
 #fh5co-services,
@@ -743,7 +744,7 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 400px;
 }
 .project-content .desc {
-  background: white;
+  background: #005aff;
   padding: 10px 20px;
   position: absolute;
   bottom: -10px;
@@ -965,7 +966,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-footer {
-  background: #efefef;
+  background: #005aff;
 }
 #fh5co-footer .fh5co-footer-links {
   padding: 0;
@@ -977,7 +978,7 @@ h1, h2, h3, h4, h5, h6, figure {
   list-style: none;
 }
 #fh5co-footer .fh5co-footer-links li a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
 }
 #fh5co-footer .fh5co-footer-links li a:hover {
@@ -1000,6 +1001,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-footer .copyright .block {
   display: block;
+  color: white;
 }
 
 #fh5co-offcanvas {
@@ -1588,6 +1590,16 @@ svg{
     opacity: 1;
     transform: translateX(0px);
   }
+}
+
+
+.policy{
+  padding-top: 150px;
+ 
+}
+
+.privacy{
+  color: #000;
 }
 
 
