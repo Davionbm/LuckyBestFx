@@ -918,10 +918,11 @@ h1, h2, h3, h4, h5, h6, figure {
     font-size: 8px;
   }
 
-  .footer-imgs img{
+  .footer-imgs{
+    display: flex;
+    flex-wrap: wrap;
     width: 80%;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin: 0 auto ;
   }
 }
 #fh5co-testimonial .arrow-thumb {
@@ -1000,6 +1001,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 100px;
 }
 
 #fh5co-footer {
@@ -2042,10 +2044,10 @@ input {
   height: 150px;
   border-radius: 15px;
   padding: 10px 10px;
-  margin-left: 100px;
+  margin: 0 auto;
 }
 
-.container-footer{
+.container-footer {
   
   margin: 0 auto;
   padding-left: 15px;
@@ -2053,7 +2055,8 @@ input {
 }
 
 .container-footer h3{
-  margin-left: 100px;
+  margin: 0px auto;
+  text-align: center;
 }
 
 
