@@ -154,6 +154,7 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 768px) {
   .fh5co-nav .menu-1 {
     display: none;
+    padding-bottom: 20px;
   }
 }
 .fh5co-nav ul {
@@ -995,9 +996,15 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-started .form-inline .form-group .form-control {
   width: 100%;
 }
+.copyright{
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 #fh5co-footer {
   background: #005aff;
+  width: 100%;
 }
 #fh5co-footer .fh5co-footer-links {
   padding: 0;
@@ -2039,7 +2046,10 @@ input {
 }
 
 .container-footer{
-  width: 90%;
+  
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .container-footer h3{
