@@ -690,6 +690,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .project-content .col-forth .project {
   background-size: cover;
+
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
@@ -838,12 +839,17 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 20px;
   line-height: 1.5;
   font-weight: bold;
-  color: #000;
+  color: #fff;
 }
+
+.fh5co-heading .policy-h3{
+  color: #fff;
+}
+
 .fh5co-heading p {
   font-size: 18px;
   line-height: 1.5;
-  color: #828282;
+  color: #fff;
 }
 .fh5co-heading span {
   display: block;
@@ -890,6 +896,25 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 992px) {
   #fh5co-testimonial .testimony-slide blockquote {
     width: 100%;
+  }
+
+  .fh5co-heading p{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .text{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .faq{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .cta h1{
+    font-size: 8px;
   }
 }
 #fh5co-testimonial .arrow-thumb {
@@ -1526,11 +1551,31 @@ body{
 
 section{
   min-height: 100vh;
-  width: 80%;
+  /* width: 80%; */
   margin: 0 auto;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
+}
+
+.faq{
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.faq-sec{
+  min-height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+  /* margin-left: 500px; */
+  margin-top: 150px;
+  /* display: flex; */
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.faq-sec .faq{
+  margin-left: 300px;;
 }
 
 .title{
@@ -1604,6 +1649,10 @@ svg{
 
 /* Call to action */
   
+
+.about-text{
+  font-size: 21px;
+}
 .cta {
   text-align: center;
   margin: 100px auto;
@@ -1640,9 +1689,9 @@ svg{
     cursor: pointer;
 }
 
-@media(max-wdith: 700px) {
+@media(max-wdith: 800px) {
   .cta h1 {
-    font-size: 10px;
+    font-size: 21px;
   }
 
   .cta .hero-btn-1{
@@ -1976,6 +2025,17 @@ input {
 .footer-imgs img{
   width: 250px;
   height: 150px;
+  border-radius: 15px;
+  padding: 10px 10px;
+  margin-left: 100px;
+}
+
+.container-footer{
+  width: 90%;
+}
+
+.container-footer h3{
+  margin-left: 100px;
 }
 
 
