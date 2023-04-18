@@ -850,7 +850,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-heading p {
   font-size: 18px;
   line-height: 1.5;
-  color: #fff;
+  color: #000;
 }
 .fh5co-heading span {
   display: block;
@@ -1565,7 +1565,7 @@ body{
 }
 
 section{
-  min-height: 100vh;
+  min-height: 60vh;
   /* width: 80%; */
   margin: 0 auto;
   /* display: flex; */
@@ -1655,7 +1655,7 @@ svg{
 
 
 .policy{
-  padding-top: 150px;
+  padding-top: 50px;
  
 }
 
@@ -1965,7 +1965,7 @@ button {
 h2 {
     width: 100%;
     font-size: 26px;
-    /* text-align: center; */
+    text-align: center;
 }
 
 label {
