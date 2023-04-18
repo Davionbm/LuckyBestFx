@@ -916,6 +916,12 @@ h1, h2, h3, h4, h5, h6, figure {
   .cta h1{
     font-size: 8px;
   }
+
+  .footer-imgs img{
+    width: 80%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 #fh5co-testimonial .arrow-thumb {
   position: absolute;
@@ -1575,7 +1581,8 @@ section{
 }
 
 .faq-sec .faq{
-  margin-left: 300px;;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .title{
@@ -1691,6 +1698,7 @@ svg{
 
 @media(max-wdith: 800px) {
   .cta h1 {
+    width: 80%;
     font-size: 21px;
   }
 
