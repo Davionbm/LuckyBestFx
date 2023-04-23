@@ -10,7 +10,7 @@ body {
 
 #wrapper {
 	width: 500px;
-	height: 370px;
+	height: 700px;
 	position: relative;
 	overflow: hidden;
 	box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.4);
@@ -40,12 +40,14 @@ body {
 #login-side {
 	background-color: #f7f7f7;
 	transform: translateX(0);
+	height: 700px;
 }
 /* Sign Up Form */
 
 #signup-side {
 	background-color: #ffffff;
 	transform: translateX(-100%);
+	height: 700px;
 }
 /* Form Switch */
 
