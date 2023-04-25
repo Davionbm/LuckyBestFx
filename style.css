@@ -362,7 +362,7 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.9); /* background */
+  background: rgba(0, 0, 0, 0.6 ); /* background */
 }
 .fh5co-cover > .fh5co-container {
   position: relative;
@@ -675,7 +675,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-bottom: 7em;
 }
 .project-content .col-forth {
-  width: 25%;
+  width: 50%;
   float: left;
   padding-left: 10px;
   padding-right: 10px;
@@ -2291,6 +2291,80 @@ label:after {
   font-weight: bold;
   font-size: 18px;
 }
+
+#css {
+  color: yellow;
+  font-family: 'Odibee Sans', cursive;
+}
+
+.carousel-wrapper {
+  height: 400px;
+  position: relative;
+  width: 800px;
+  display: block;
+  margin: 50px auto ;
+  border: 2px solid black;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.arrow{
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+}
+.arrow-prev {
+  left: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+
+}
+.arrow-next {
+  right: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^= "item"] {
+  display: none;
+}
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url('1.jpg');
+  background-size: cover;
+}
+.item-2 {
+  background: url('2.jpg');
+  background-size: cover;
+}
+.item-3 {
+  background: url('img3.jpg');
+  background-size: cover;
+}
+
+*:target ~ .item-1{
+  opacity: 0;
+}
+#item-1:target ~ .item-1 {
+  opacity: 1;
+
+}
+#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+} 
 
 
 
