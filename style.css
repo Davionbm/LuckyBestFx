@@ -2366,6 +2366,27 @@ label:after {
   opacity: 1;
 } 
 
+.project-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.project-content img{
+  width: 500px;
+  height: 280px;
+  border-radius: 20px;
+  margin: 10px 10px;
+  
+}
+
+.project-content img:hover{
+  box-shadow: 0 0 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
 
 
 
