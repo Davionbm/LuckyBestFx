@@ -270,7 +270,7 @@ h1, h2, h3, h4, h5, h6, figure {
   box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75);
 }
 .fh5co-nav ul li.active > a {
-  color: #fff !important;
+  color: #fff;
 }
 
 #fh5co-header,
@@ -2414,6 +2414,67 @@ label:after {
   transition: 0.5s;
 }
 
+.btn-purchase{
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 0 0 0 0;
+  margin-left: 20px;
+}
+
+#slider{
+  overflow: hidden;
+  z-index: -1;
+ }
+#slider figure{
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 10s slider infinite;
+}
+#slider figure img{
+  width: 20%;
+  height: 75vh;
+  float: left;
+  margin-top: 180px;
+}
+@keyframes slider{
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 0;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+
+.top{
+  background-color: black;
+}
+
+.top-menu{
+  background-color: #000;
+}
 
 
 
