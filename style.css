@@ -1675,7 +1675,7 @@ svg{
   
 
 .about-text{
-  font-size: 21px;
+  font-size: 30px;
 }
 .cta {
   text-align: center;
@@ -2388,6 +2388,31 @@ label:after {
   transition: 0.5s;
 }
 
+.datatext h1{
+  margin-right: 100px;
+}
+
+.dataenergy{
+  display: flex;
+  justify-content: center;
+  margin: 150px 0 20px;
+  
+  
+}
+
+.dataimg img{
+  width: 650px;
+  height: 400px;
+  border-radius: 30px;
+}
+
+.dataimg img:hover{
+  width: 680px;
+  height: 430px;
+  box-shadow: 0 0 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
 
 
 
