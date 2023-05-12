@@ -1,5 +1,5 @@
 body {
-	/* background: #1574c3; */
+	background: #1574c3;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -9,7 +9,7 @@ body {
 	background-image: url('white.jpg');
 	background-size: cover;
 	background-position: center;
-}
+} 
 /* Form Container */
 
 #wrapper {
