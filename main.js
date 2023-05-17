@@ -158,8 +158,8 @@
 
 			$this
 				.find('.dropdown')
-				.css('display', 'none')
-				.removeClass('animated-fast fadeInUpMenu');
+				.css('display', 'block')
+				.removeClass('animated-fast fadeInUpMeu');
 		});
 
 	};
