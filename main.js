@@ -191,6 +191,10 @@
 	
 	};
 
+	var button = function() {
+		$
+	}
+
 
 	// Loading page
 	var loaderPage = function() {
