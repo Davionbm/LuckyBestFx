@@ -2490,6 +2490,20 @@ label:after {
   margin-top: 80px;
 }
 
+.sub-wrapper{
+  background: #1574c3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 95vh;
+	font-family: montserrat;
+	opacity: 30;
+	background-image: url('white.jpg');
+	background-size: cover;
+	background-position: center;
+  margin-top: 80px;
+}
+
 #wrapper {
 
 	width: 500px;
@@ -2499,6 +2513,19 @@ label:after {
 	box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.4);
 }
 #wrapper h1 {
+	color: #1574c3;
+  padding-top: 40px;
+}
+
+#sub-wrapper {
+
+	width: 500px;
+	height: 80%;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.4);
+}
+#sub-wrapper h1 {
 	color: #1574c3;
   padding-top: 40px;
 }
