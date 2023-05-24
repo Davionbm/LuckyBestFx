@@ -164,13 +164,12 @@ W	Facebook: 		https://www.facebook.com/fh5co
             <!-- Login Form -->
             <form id="login-side" class="form2">
 				<h1>Register in to TradeNaira Exchange Platform</h1>
-				<input type="text" placeholder="Enter Name..." required>
-				<input type="email" placeholder="Enter Email..." required>
-				<input type="text" placeholder="Country" required>
-				<input type="tel" placeholder="Phone" required>
-				<input type="password" placeholder="Enter Password" required minlength="8">
-				<input type="password" placeholder="Confirm Password" required>
-				<button type="submit">Submit</button>
+				<input type="text" id="full_name" placeholder="Enter Name..." required>
+				<input type="email" id="email" placeholder="Enter Email..." required>
+				<input type="text" id="country" placeholder="Country" required>
+				<input type="tel" id="number" placeholder="Phone" required>
+				<input type="password" id="password" placeholder="Enter Password" required minlength="8">
+				<button type="submit" onclick="register()">REGISTER</button>
 				<p class="switch-animation">Already have an account? <a href="login2.html">Login</a></p>
             </form>
             <!-- Sign Up Form -->
@@ -198,6 +197,7 @@ W	Facebook: 		https://www.facebook.com/fh5co
 	<!-- Carousel -->
 	<script src="owl.carousel.min.js"></script>
 	<!-- Main -->
+	<script src="index.js"></script>
 	<script src="main.js"></script>
 	<!-- Modernizr JS -->
 	<script src="modernizr-2.6.2.min.js"></script>
@@ -214,29 +214,65 @@ W	Facebook: 		https://www.facebook.com/fh5co
 	</div>
 
 	<script type="module">
-		// Import the functions you need from the SDKs you need
-		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
-		// TODO: Add SDKs for Firebase products that you want to use
-		// https://firebase.google.com/docs/web/setup#available-libraries
-	  
-		// Your web app's Firebase configuration
-		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		import { initializeApp } from "firebase/app";
+		import { getAuth } from "firebase/auth";
+		
+		// TODO: Replace the following with your app's Firebase project configuration
+		// See: https://firebase.google.com/docs/web/learn-more#config-object
 		const firebaseConfig = {
-		  apiKey: "AIzaSyBi4Qs6c0lMO87pzkMeu76MNp5nSd88f8A",
-		  authDomain: "tradenairang.firebaseapp.com",
-		  projectId: "tradenairang",
-		  storageBucket: "tradenairang.appspot.com",
-		  messagingSenderId: "876826874647",
-		  appId: "1:876826874647:web:92a57941fea88263601d52",
-		  measurementId: "G-9W5471T2KG"
+		  // ...
 		};
-	  
+		
 		// Initialize Firebase
 		const app = initializeApp(firebaseConfig);
-		const analytics = getAnalytics(app);
-	  </script>
-	</body>
+		
+		
+		// Initialize Firebase Authentication and get a reference to the service
+		const auth = getAuth(app);
+		
+		
+		// database
+		import { initializeApp } from "firebase/app";
+		import { getDatabase } from "firebase/database";
+		
+		// TODO: Replace the following with your app's Firebase project configuration
+		// See: https://firebase.google.com/docs/web/learn-more#config-object
+		const firebaseConfig = {
+		  // ...
+		  // The value of `databaseURL` depends on the location of the database
+		  databaseURL: "https://DATABASE_NAME.firebaseio.com",
+		};
+		
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		
+		
+		// Initialize Realtime Database and get a reference to the service
+		const database = getDatabase(app);
+		
+		
+				// Import the functions you need from the SDKs you need
+				import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+				import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
+				// TODO: Add SDKs for Firebase products that you want to use
+				// https://firebase.google.com/docs/web/setup#available-libraries
+			  
+				// Your web app's Firebase configuration
+				// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+				const firebaseConfig = {
+				  apiKey: "AIzaSyBi4Qs6c0lMO87pzkMeu76MNp5nSd88f8A",
+				  authDomain: "tradenairang.firebaseapp.com",
+				  projectId: "tradenairang",
+				  storageBucket: "tradenairang.appspot.com",
+				  messagingSenderId: "876826874647",
+				  appId: "1:876826874647:web:92a57941fea88263601d52",
+				  measurementId: "G-9W5471T2KG"
+				};
+			  
+				// Initialize Firebase
+				const app = initializeApp(firebaseConfig);
+				const analytics = getAnalytics(app);
+			  </script>
 </html>
 
 

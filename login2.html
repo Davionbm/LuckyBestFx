@@ -62,7 +62,7 @@ W	Facebook: 		https://www.facebook.com/fh5co
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	
+
 	</head>
 	<body>
 	
@@ -163,9 +163,10 @@ W	Facebook: 		https://www.facebook.com/fh5co
             <!-- Login Form -->
             <form id="login-side" class="form1">
               <h1>Log in to TradeNaira<br> Exchange Platform</h1>
-              <input type="email" placeholder="Your Email..." required>
-              <input type="password" placeholder="Your Password..." required minlength="8">
-              <button type="submit">Submit</button>
+              <input type="email" id="email" placeholder="Your Email..." required>
+              <input type="password" id="password" placeholder="Your Password..." required minlength="8">
+              <button type="submit" onclick="login()">Submit</button>
+			  <button type="submit" onclick="register()">Register</button>
               <p class="switch-animation">Don't have an account? <a href="login.html">Sign up</a></p>
             </form>
             <!-- Sign Up Form -->
@@ -201,8 +202,9 @@ W	Facebook: 		https://www.facebook.com/fh5co
 	<!-- Carousel -->
 	<script src="owl.carousel.min.js"></script>
 	<!-- Main -->
+	<script src="index.js"></script>
 	<script src="main.js"></script>
-	<!-- Modernizr JS -->
+	<!-- Modernizr JS --> 
 	<script src="modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
@@ -216,10 +218,52 @@ W	Facebook: 		https://www.facebook.com/fh5co
 		</div>
 	</div>
 
+
+ 
+	</body>
+
+
 	<script type="module">
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+  // ...
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
+
+
+// database
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+  // ...
+  // The value of `databaseURL` depends on the location of the database
+  databaseURL: "https://DATABASE_NAME.firebaseio.com",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
+
+
 		// Import the functions you need from the SDKs you need
-		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
 		// TODO: Add SDKs for Firebase products that you want to use
 		// https://firebase.google.com/docs/web/setup#available-libraries
 	  
@@ -239,7 +283,6 @@ W	Facebook: 		https://www.facebook.com/fh5co
 		const app = initializeApp(firebaseConfig);
 		const analytics = getAnalytics(app);
 	  </script>
-	</body>
 </html>
 
 
