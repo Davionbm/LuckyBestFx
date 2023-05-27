@@ -23,7 +23,7 @@ function register () {
   country = document.getElementById('country').value 
   number = document.getElementById('number').value 
   password = document.getElementById('password').value
-
+  event.preventDefault();
   // validate inpute fields
   if (validate_email(email) == false || validate_password(passowrd) == false) {
     alert('Email or Password Invalid')
@@ -36,6 +36,7 @@ function register () {
   
 
   console.log(register())
+
 }
 
 // Move on with Auth
@@ -61,6 +62,7 @@ auth.creatUserWithEmailAndPassword(email, password)
 
 
   alert('User Created')
+  
 })
 .catch(function(error){
   // firebase will alert us of errors 
