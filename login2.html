@@ -35,15 +35,15 @@ W	Facebook: 		https://www.facebook.com/fh5co
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
 
-	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet"> -->
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+	<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> -->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
 	
 
 	<!-- font awesome -->
-	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -52,8 +52,8 @@ W	Facebook: 		https://www.facebook.com/fh5co
 	<link rel="stylesheet" href="bootstrap.css">
 	
 	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="owl.carousel.min.css">
-	<link rel="stylesheet" href="owl.theme.default.min.css">
+	<!-- <link rel="stylesheet" href="owl.carousel.min.css">
+	<link rel="stylesheet" href="owl.theme.default.min.css"> -->
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="style.css">
@@ -64,8 +64,9 @@ W	Facebook: 		https://www.facebook.com/fh5co
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 
-	<script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 
 	</head>
 	<body>
@@ -169,7 +170,7 @@ W	Facebook: 		https://www.facebook.com/fh5co
               <h1>Log in to TradeNaira<br> Exchange Platform</h1>
               <input type="email" id="email" placeholder="Your Email">
               <input type="password" id="password" placeholder="Your Password" required minlength="8">
-              <button type="submit" onclick="">Submit</button>
+              <button type="submit">Submit</button>
               <p class="switch-animation">Don't have an account? <a href="login.html">Sign up</a></p>
             </form>
             <!-- Sign Up Form -->
@@ -185,50 +186,52 @@ W	Facebook: 		https://www.facebook.com/fh5co
               <p class="switch-animation">Already have an account? <a href="#">Login</a></p>
             </form> -->
         </div>
+
+		<script src="index.js"></script>
+		<script type="module">
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+			// TODO: Add SDKs for Firebase products that you want to use
+			// https://firebase.google.com/docs/web/setup#available-libraries
+		  
+			// Your web app's Firebase configuration
+			const firebaseConfig = {
+			  apiKey: "AIzaSyAGsOr0m-pkfg4fFuNPX49QEIk0N26wR1Y",
+			  authDomain: "final-firebase-9817a.firebaseapp.com",
+			  projectId: "final-firebase-9817a",
+			  storageBucket: "final-firebase-9817a.appspot.com",
+			  messagingSenderId: "710723432118",
+			  appId: "1:710723432118:web:9d0d24cd15d8313b0b4017"
+			};
+		  
+			// Initialize Firebase
+			const app = initializeApp(firebaseConfig);
+		  </script>
     </div>
 	</header>
 
    
-	<script>
-		// Sign up a user
-		function signUp() {
-		  var email = document.getElementById("email").value;
-		  var password = document.getElementById("password").value;
-		  
-		  firebase.auth().createUserWithEmailAndPassword(email, password)
-			.then(function(userCredential) {
-			  // User signed up successfully
-			  var user = userCredential.user;
-			  // Perform any necessary actions or redirect the user
-			})
-			.catch(function(error) {
-			  // Handle sign up error
-			  var errorCode = error.code;
-			  var errorMessage = error.message;
-			  // Display error message to the user
-			});
-		}
-	  </script>
+	
 	  
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
 	<!-- jQuery -->
-	<script src="jquery.min.js"></script>
+	<!-- <script src="jquery.min.js"></script> -->
 	<!-- jQuery Easing -->
-	<script src="jquery.easing.1.3.js"></script>
+	<!-- <script src="jquery.easing.1.3.js"></script> -->
 	<!-- Bootstrap -->
-	<script src="bootstrap.min.js"></script>
+	<!-- <script src="bootstrap.min.js"></script> -->
 	<!-- Waypoints -->
-	<script src="jquery.waypoints.min.js"></script>
+	<!-- <script src="jquery.waypoints.min.js"></script> -->
 	<!-- Stellar Parallax -->
-	<script src="jquery.stellar.min.js"></script>
+	<!-- <script src="jquery.stellar.min.js"></script> -->
 	<!-- Carousel -->
-	<script src="owl.carousel.min.js"></script>
+	<!-- <script src="owl.carousel.min.js"></script> -->
 	<!-- Main -->
 	<!-- <script src="index.js"></script> -->
-	<script src="main.js"></script>
+	<!-- <script src="main.js"></script> -->
 	<!-- Modernizr JS --> 
-	<script src="modernizr-2.6.2.min.js"></script>
+	<!-- <script src="modernizr-2.6.2.min.js"></script> -->
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -241,29 +244,7 @@ W	Facebook: 		https://www.facebook.com/fh5co
 		</div>
 	</div>
 
-	<script type="module">
-		// Import the functions you need from the SDKs you need
-		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
-		// TODO: Add SDKs for Firebase products that you want to use
-		// https://firebase.google.com/docs/web/setup#available-libraries
-	  
-		// Your web app's Firebase configuration
-		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-		const firebaseConfig = {
-		  apiKey: "AIzaSyAQloVY_3cz5Rz1jGZxXBf17foYuWkFqIU",
-		  authDomain: "tradedatabase-fd4de.firebaseapp.com",
-		  projectId: "tradedatabase-fd4de",
-		  storageBucket: "tradedatabase-fd4de.appspot.com",
-		  messagingSenderId: "1094208085820",
-		  appId: "1:1094208085820:web:a48b8b44a6efac54b38839",
-		  measurementId: "G-DBCL9Y30FB"
-		};
-	  
-		// Initialize Firebase
-		const app = initializeApp(firebaseConfig);
-		const analytics = getAnalytics(app);
-	  </script>
+	
 	</body>
 </html>
 

@@ -1,16 +1,17 @@
  // Your web app's Firebase configuration
  const firebaseConfig = {
-  apiKey: "AIzaSyDiECxBIIwmunsTyojVPSTZW8eI3Mnc7PY",
-  authDomain: "fir-store-59ff8.firebaseapp.com",
-  projectId: "fir-store-59ff8",
-  storageBucket: "fir-store-59ff8.appspot.com",
-  messagingSenderId: "407642163403",
-  appId: "1:407642163403:web:61decaaef261e0a077f34e"
+  apiKey: "AIzaSyAGsOr0m-pkfg4fFuNPX49QEIk0N26wR1Y",
+  authDomain: "final-firebase-9817a.firebaseapp.com",
+  projectId: "final-firebase-9817a",
+  storageBucket: "final-firebase-9817a.appspot.com",
+  messagingSenderId: "710723432118",
+  appId: "1:710723432118:web:9d0d24cd15d8313b0b4017"
 };
 
 // // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
+// const app = initializeApp('firebaseConfig');
 // Intialize variables
+firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth()
 const database = firebase.database()
 
@@ -18,59 +19,61 @@ const database = firebase.database()
 function register () {
   
   // Get all our input fields
-  full_name = document.getElementById('full_name').value
-  email = document.getElementById('email').value
-  country = document.getElementById('country').value 
-  number = document.getElementById('number').value 
-  password = document.getElementById('password').value
-  event.preventDefault();
-  // validate inpute fields
-  if (validate_email(email) == false || validate_password(passowrd) == false) {
-    alert('Email or Password Invalid')
-    return
-    // Don't continue running the code
-  }
-  if(validate_field(full_name) == false || validate_field(email) == false || validate_field(country) == false || validate_field(number)) {
-    alert('One or More Extra Fields is Not Filled')
-  }
+  // full_name = document.getElementById('full_name').value
+  // email = document.getElementById('email').value
+  // country = document.getElementById('country').value 
+  // number = document.getElementById('number').value 
+  // password = document.getElementById('password').value
+  // event.preventDefault();
+  // // validate inpute fields
+  // if (validate_email(email) == false || validate_password(passowrd) == false) {
+  //   alert('Email or Password Invalid')
+  //   return
+  //   // Don't continue running the code
+  // }
+  // if(validate_field(full_name) == false || validate_field(email) == false || validate_field(country) == false || validate_field(number)) {
+  //   alert('One or More Extra Fields is Not Filled')
+  // }
   
+  // var register = myvalue;
 
-  console.log(register())
+// event.preventDefault();
+  // console.log(email);
 
 }
 
 // Move on with Auth
-auth.creatUserWithEmailAndPassword(email, password)
-.then(function(){
-  // declare user variables 
-  var user = auth.currentUser
-  // Add to firebase database 
-  var database_ref = database.ref()
+// auth.creatUserWithEmailAndPassword(email, password)
+// .then(function(){
+//   // declare user variables 
+//   var user = auth.currentUser
+//   // Add to firebase database 
+//   var database_ref = database.ref()
 
-  // Create User data 
-  var user_data = {
-    full_name : full_name,
-    email : email,
-    country : country,
-    number : number,
-    last_login : Date.now()
-  }
+//   // Create User data 
+//   var user_data = {
+//     full_name : full_name,
+//     email : email,
+//     country : country,
+//     number : number,
+//     last_login : Date.now()
+//   }
 
-  database_ref.child('users/' + user.uid).set(user_data)
-
-
+//   database_ref.child('users/' + user.uid).set(user_data)
 
 
-  alert('User Created')
+
+
+//   alert('User Created')
   
-})
-.catch(function(error){
-  // firebase will alert us of errors 
-  var error_code = error.error_code
-  var error_message = error.messagingSenderId
+// })
+// .catch(function(error){
+//   // firebase will alert us of errors 
+//   var error_code = error.error_code
+//   var error_message = error.messagingSenderId
 
-  alert(error_message)
-})
+//   alert(error_message)
+// })
 
 
 
@@ -112,6 +115,130 @@ function validate_field(field) {
     return true
   }
 }
+
+
+//Sign Up form
+// Get user credentials
+// Get the sign-up form
+var signUpForm = document.getElementById('login-side');
+
+// Add an event listener to handle form submission
+signUpForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get user credentials
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+
+  // Create a new user with email and password
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function(userCredential) {
+      // User creation successful
+      var user = userCredential.user;
+      alert('User Created')
+      console.log("User created:", user);
+      // Perform further actions if needed
+
+      // Redirect to another page
+    window.location.href = "index.html";
+    })
+    .catch(function(error) {
+      // Handle errors during user creation
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.error("User creation error:", errorCode, errorMessage);
+      // Display error message to the user
+
+
+      // Store additional user information in the database
+      var userId = user.uid;
+      var userData = {
+        email: user.email,
+        full_name : user.full_name,
+        country : user.country,
+        number : user.number,
+        last_login : Date.now()
+        // Add additional user data as needed
+      };
+
+
+
+// Access the Firebase Realtime Database
+
+
+
+      // Save user data to the database
+      var database = firebase.database();
+      firebase.database().ref('users/' + userId).set(userData)
+        .then(function() {
+          console.log("User data saved to the database");
+          // Perform further actions if needed
+        })
+        .catch(function(error) {
+          console.error("Error saving user data:", error);
+          // Display error message to the user
+        });
+
+      // Perform further actions if needed
+    })
+    .catch(function(error) {
+      // Handle errors during user creation
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.error("User creation error:", errorCode, errorMessage);
+      // Display error message to the user
+    });
+
+
+
+
+
+  // Get user credentials
+// Get the sign-in form
+var signInForm = document.getElementById('login-side');
+
+// Add an event listener to handle form submission
+signInForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get user credentials
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+
+  // Sign in user with email and password
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(function(userCredential) {
+      // User sign-in successful
+      var user = userCredential.user;
+      alert("User Signed In")
+      console.log("User signed in:", user);
+      // Perform further actions if needed
+      // Redirect to another page
+       window.location.href = "index.html";
+    })
+    .catch(function(error) {
+      // Handle errors during user sign-in
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert("Wrong Credentials")
+      console.error("User sign-in error:", errorCode, errorMessage);
+      // Display error message to the user
+    });
+});
+
+
+
+      // Create User data 
+  // var user_data = {
+  //   full_name : full_name,
+  //   email : email,
+  //   country : country,
+  //   number : number,
+  //   last_login : Date.now()
+  // }
+
+  // database_ref.child('users/' + user.uid).set(user_data)
+  });
 
 
 
