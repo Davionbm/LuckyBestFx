@@ -9,50 +9,69 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
      
+    // Fetch the exchange rates for dollar to naira and cryptocurrencies
+function fetchExchangeRates() {
+  var apiKey = 'f5139bbaa61365005f3d35d1f12b0dc1'; // Replace with your API key
+  var apiUrl = "http://api.exchangeratesapi.io/v1/latest?access_key=f5139bbaa61365005f3d35d1f12b0dc1&format=1&_gl=1*1gidfwr*_ga*MTE4MzY1MDA0Ny4xNjg1MTM2NDIz*_ga_HGV43FGGVM*MTY4NTEzNjQyMy4xLjEuMTY4NTEzNjk5Mi40NC4wLjA.";
+
+  axios.get(apiUrl)
+    .then(function(response) {
+      var rates = response.data.rates;
+      var nairaRate = rates['NGN'];
+
+      var bitcoinRate = rates['BTC'];
+      var ethereumRate = rates['ETH'];
+      var litecoinRate = rates['LTC'];
+
+      var nairaResultElement = document.getElementById('naira-result');
+      nairaResultElement.textContent = (amount * nairaRate).toFixed(2);
+
+      var crypto = document.getElementById('crypto').value;
+      var cryptoResultElement = document.getElementById('crypto-result');
+      var cryptoRate;
+      if (crypto === 'bitcoin') {
+        cryptoRate = bitcoinRate;
+      } else if (crypto === 'ethereum') {
+        cryptoRate = ethereumRate;
+      } else if (crypto === 'litecoin') {
+        cryptoRate = litecoinRate;
+      }
+      cryptoResultElement.textContent = (amount * cryptoRate).toFixed(6);
+    })
+    .catch(function(error) {
+      console.error('Error fetching exchange rates:', error);
+    });
+}
+
+// Convert the dollar amount to crypto
+function convertCrypto() {
+  fetchExchangeRates();
+}
+
+// Convert the dollar amount to naira
+function convert() {
+  fetchExchangeRates();
+}
+
+// Get input value
+var amountInput = document.getElementById('amount');
+var amount;
+
+amountInput.addEventListener('input', function(event) {
+  amount = parseFloat(event.target.value);
+});
+
+amountInput.addEventListener('change', convert);
 
 
-      $(document).ready(function() {
-        // Fetch exchange rates from an API or use a reliable source
-        // Replace API_ENDPOINT with the appropriate API endpoint
-        var API_ENDPOINT = "http://api.exchangeratesapi.io/v1/latest?access_key=f5139bbaa61365005f3d35d1f12b0dc1&format=1&_gl=1*1gidfwr*_ga*MTE4MzY1MDA0Ny4xNjg1MTM2NDIz*_ga_HGV43FGGVM*MTY4NTEzNjQyMy4xLjEuMTY4NTEzNjk5Mi40NC4wLjA.";
-        
-        $.get(API_ENDPOINT, function(data) {
-          // Assuming the API response contains exchange rates for USD to NGN and USD to coin
-          var usdToNgnRate = data.rates.ngn;
-          var usdToCoinRate = data.rates.coin;
-  
-          // Convert dollar amount to Naira
-          function convertToNaira(amount) {
-            return amount * usdToNgnRate;
-          }
-  
-          // Convert dollar amount to Coin
-          function convertToCoin(amount) {
-            return amount * usdToCoinRate;
-          }
-  
-          // Handle conversion button click event
-          $("#convertButton").click(function() {
-            var dollarAmount = parseFloat($("#dollarAmount").val());
-  
-            // Perform the conversions
-            var nairaAmount = convertToNaira(dollarAmount);
-            var coinAmount = convertToCoin(dollarAmount);
-  
-            // Display the results
-            $("#nairaAmount").text(nairaAmount.toFixed(2) + " NGN");
-            $("#coinAmount").text(coinAmount.toFixed(2) + " Coin");
-            event.preventDefault();
-          });
-        });
-      });
+     
     </script>
 </head>
 <body>
     <div id="wrapper">
         <!-- Login Form -->
         <form id="login-side" class="form">
-          <h1>Deriv</h1>
+          <h1>Neteller</h1>
           <div class="split">
           <input type="email" placeholder="Account Number">
           <input type="password" placeholder="Phone Number">
@@ -62,20 +81,42 @@
             <span>GTBank</span><br>
 
             Account Name<br>
-            <span>Data Energy</span><br>
+            <span>Gabriel Gbenga Samson</span><br>
             
             Account Number<br> 
-              <span>0038738570</span><br>
+              <span>0660553057</span><br>
+
+            Wallet ID<br><span>fxman@ymail.com</span>
           </h5>
-          <label for="dollarAmount">Enter Dollar Amount:</label>
-          <input type="number" id="dollarAmount">
-          <button id="convertButton">Convert</button>
-          <h2>Converted Amounts:</h2>
-          <p id="nairaAmount"></p>
-          <p id="coinAmount"></p>
+          <h1>Currency Converter</h1>
+
+          <label for="amount">Amount in Dollars:</label>
+          <input type="number" id="amount" placeholder="Enter amount" step="0.01">
+        
+          <h2>Convert to:</h2>
+        
+          <div>
+            <label for="naira">Naira (NGN):</label>
+            <span id="naira-result"></span>
+          </div>
+        
+          <div>
+            <label for="crypto">Crypto:</label>
+            <select id="crypto" onchange="convertCrypto()">
+              <option value="bitcoin">Bitcoin (BTC)</option>
+              <option value="ethereum">Ethereum (ETH)</option>
+              <option value="litecoin">Litecoin (LTC)</option>
+            </select>
+            <span id="crypto-result"></span>
+          </div>
+        
+        
           <input type="file" id="upload"><br><span>Upload Proof of payment</span>
           <button type="https://wa.me/2348063001626">Submit</button>
         </form>
     </div>
+
+      <!-- Include the necessary JavaScript libraries -->
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>

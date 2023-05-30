@@ -120,6 +120,9 @@ function validate_field(field) {
 //Sign Up form
 // Get user credentials
 // Get the sign-up form
+
+// Get the user name element
+var userNameElement = document.getElementById('user-name');
 var signUpForm = document.getElementById('login-side');
 
 // Add an event listener to handle form submission
@@ -139,8 +142,26 @@ signUpForm.addEventListener('submit', function(event) {
       console.log("User created:", user);
       // Perform further actions if needed
 
+      if (user) {
+        // User is signed in
+        console.log("User signed in:", user);
+    
+        // Get the user's display name
+        var displayName = user.displayName;
+    
+        // Update the HTML element with the user's name
+        userNameElement.textContent = "Welcome, " + displayName;
+      } else {
+        // No user is signed in
+        console.log("No user signed in");
+    
+        // Clear the HTML element
+        userNameElement.textContent = "";
+      }
+      
       // Redirect to another page
     window.location.href = "index.html";
+    
     })
     .catch(function(error) {
       // Handle errors during user creation
@@ -154,12 +175,36 @@ signUpForm.addEventListener('submit', function(event) {
       var userId = user.uid;
       var userData = {
         email: user.email,
-        full_name : user.full_name,
+        username : user.username,
         country : user.country,
         number : user.number,
         last_login : Date.now()
         // Add additional user data as needed
       };
+
+      var user = auth.currentUser;
+
+    
+
+// Reference to the Firestore database
+var db = firebase.firestore();
+
+// Define user data
+var userData = {
+  name: "John Doe",
+  age: 25,
+  email: user.email
+};
+
+// Store user data in Firestore
+db.collection("users").doc(user.uid).set(userData)
+  .then(function() {
+    console.log("User data stored in Firestore");
+  })
+  .catch(function(error) {
+    console.error("Error storing user data:", error);
+  });
+
 
 
 
@@ -195,6 +240,8 @@ signUpForm.addEventListener('submit', function(event) {
 
   // Get user credentials
 // Get the sign-in form
+
+
 var signInForm = document.getElementById('login-side');
 
 // Add an event listener to handle form submission
@@ -224,6 +271,8 @@ signInForm.addEventListener('submit', function(event) {
       console.error("User sign-in error:", errorCode, errorMessage);
       // Display error message to the user
     });
+
+
 });
 
 

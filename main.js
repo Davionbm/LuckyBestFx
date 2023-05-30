@@ -249,18 +249,18 @@
 	};
 
 	
-	$(function(){
-		mobileMenuOutsideClick();
-		offcanvasMenu();
-		burgerMenu();
-		contentWayPoint();
-		dropdown();
-		goToTop();
-		loaderPage();
-		counterWayPoint();
-		parallax();
-		testimonialCarousel();
-	});
+	// $(function(){
+	// 	mobileMenuOutsideClick();
+	// 	offcanvasMenu();
+	// 	burgerMenu();
+	// 	contentWayPoint();
+	// 	dropdown();
+	// 	goToTop();
+	// 	loaderPage();
+	// 	counterWayPoint();
+	// 	parallax();
+	// 	testimonialCarousel();
+	// });
 
 
 }());
@@ -280,7 +280,7 @@ toggle = () => {
 	container.classList.toggle('sign-up')
 }
 
-setTimeout(() => {
-	container.classList.add('sign-in')
-}, 200)
+// setTimeout(() => {
+// 	container.classList.add('sign-in')
+// }, 200)
 
