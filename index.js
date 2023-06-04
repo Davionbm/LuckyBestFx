@@ -156,11 +156,13 @@ signUpForm.addEventListener('submit', function(event) {
         console.log("No user signed in");
     
         // Clear the HTML element
-        userNameElement.textContent = "";
+        userNameElement.textContent = "Welcome, " + displayName;
       }
       
       // Redirect to another page
     window.location.href = "index.html";
+
+    
     
     })
     .catch(function(error) {
@@ -171,16 +173,23 @@ signUpForm.addEventListener('submit', function(event) {
       // Display error message to the user
 
 
-      // Store additional user information in the database
-      var userId = user.uid;
-      var userData = {
-        email: user.email,
-        username : user.username,
-        country : user.country,
-        number : user.number,
-        last_login : Date.now()
-        // Add additional user data as needed
-      };
+      var database = firebase.database();
+      database.ref('users').set({
+        username: document.getElementById('username').value,
+        email: document.getElementById('email').value,
+        country: document.getElementById('country').value,
+        number: document.getElementById('number').value,
+        password: document.getElementById('password').value
+
+      });
+
+      var database = firebase.database();
+      database.ref('users').once('value').then(function(snapshot) {
+      var users = snapshot.val();
+      console.log(users);
+});
+
+      
 
       var user = auth.currentUser;
 
@@ -272,6 +281,7 @@ signInForm.addEventListener('submit', function(event) {
       // Display error message to the user
     });
 
+    
 
 });
 

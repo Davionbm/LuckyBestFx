@@ -16,6 +16,28 @@ const firebaseConfig = {
   const database = firebase.database()
 
 
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+.then((userCredential) => {
+  // User signed in successfully
+  var user = userCredential.user;
+  // Call a function to display the username
+  displayUsername(user.displayName);
+})
+.catch((error) => {
+  // Handle sign-in errors
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log(errorMessage);
+});
+
+
+function displayUsername(username) {
+  var usernameElement = document.getElementById("username");
+  usernameElement.innerText = username;
+}
+
       // Log out the user
       document.getElementById('logout-btn').addEventListener('click', function() {
         firebase.auth().signOut()
@@ -33,3 +55,6 @@ const firebaseConfig = {
 
     
     });
+
+   
+  
