@@ -187,6 +187,17 @@ signUpForm.addEventListener('submit', function(event) {
       database.ref('users').once('value').then(function(snapshot) {
       var users = snapshot.val();
       console.log(users);
+
+      var usersRef = firebase.database().ref("users");
+      var newUserRef = usersRef.push();
+      newUserRef.set(user);
+
+      var usersRef = firebase.database().ref("users");
+      var userId = "customUserId";
+      var userRef = usersRef.child(userId);
+      userRef.set(user);
+
+
 });
 
       
