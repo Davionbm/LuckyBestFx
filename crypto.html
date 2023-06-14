@@ -7,6 +7,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
      
 
@@ -47,8 +48,16 @@
         });
       });
     </script>
+    <style>
+      .answer p{
+        font-size: small;
+        
+      }
+    </style>
 </head>
 <body>
+ 
+  
     <div id="wrapper">
         <!-- Login Form -->
         <form id="login-side" class="form">
@@ -67,55 +76,57 @@
             Account Number<br> 
               <span>0660553057</span><br>
 
-
-        <section class="faq-sec container" id="faq" > 
-                 <h2 class="title">FAQs</h2> 
-  
-                 <div class="faq"> 
-                         <div class="question"> 
-                                 <h3>Crypto Wallets</h3> 
-  
-                                 <svg width="15" height="10" viewBox="0 0 42 25"> 
-                                         <path  
-                                         d="M3 3L21 21L39 3"  
-                                         stroke="white"  
-                                         stroke-width="7"  
-                                         stroke-linecap="round" 
-                                         /> 
-                                 </svg> 
-                         </div> 
-  
-                         <div class="answer"> 
-                                 <p> 
-                                         BTC Wallet:  3KmaqDfdCJs9zfcaPCUW55ykqMgwTNdffk<br>
-              Network:BTC (Minimum deposit 0.0001BTC)
-                                 </p> 
+              <!-- <section class="faq-sec container" id="faq" > 
+                <h2 class="title">FAQs</h2>  -->
+ 
+                <div class="faq"> 
+                        <div class="question"> 
+                                <h4>Crypto Wallets</h4> 
+ 
+                                <svg width="15" height="10" viewBox="0 0 42 25"> 
+                                        <path  
+                                        d="M3 3L21 21L39 3"  
+                                        stroke="white"  
+                                        stroke-width="7"  
+                                        stroke-linecap="round" 
+                                        /> 
+                                </svg> 
+                        </div> 
+ 
+                        <div class="answer"> 
+                                <p> 
+                                      BTC Wallet:  3KmaqDfdCJs9zfcaPCUW55ykqMgwTNdffk<br>
+                                      Network:BTC (Minimum deposit 0.0001BTC)
+                                </p> 
 
 <p>ETH wallet:  0xB039f00f371A63aAb63aC0544bC5ee40e641a0cd<br>
-              network: ERC20 (Minimum deposit 0.005ETH)
+             network: ERC20 (Minimum deposit 0.005ETH)
 </p>
 
 <p>
 USDT: wattelt  TV3oQ7y5TXa49Zru9bwHJWEaggLM3qB8S9<br>
-              Network: TRC20 (Minimum deposit 5USDT)
+             Network: TRC20 (Minimum deposit 5USDT)
 </p>
 
 <p>ETH wallet:  0xB039f00f371A63aAb63aC0544bC5ee40e641a0cd<br>
-              network: ERC20 (Minimum deposit 0.005ETH)
+             network: ERC20 (Minimum deposit 0.005ETH)
 </p>
 
 <p>
 BNB wallet:0xa31b466AAbbe935ef57fb891dd08aC826fb4Cf5b<br>
-              network: BEP20 (Minimum deposit 0.02BNB)
+             network: BEP20 (Minimum deposit 0.02BNB)
 </p>
-                         </div> 
-                 </div>
+                        </div> 
+                </div>
               
-              
-              
-       
-              
-  
+          </h5>
+          <!-- <label for="dollarAmount">Enter Dollar Amount:</label>
+          <input type="number" id="dollarAmount">
+          <button id="convertButton">Convert</button>
+          <h2>Converted Amounts:</h2>
+          <p id="nairaAmount"></p>
+          <p id="coinAmount"></p> -->
+
           <label for="dollarAmount">Enter Dollar Amount:</label>
           <input type="number" id="dollarAmount">
           <button id="convertButton">Convert</button>
@@ -126,5 +137,31 @@ BNB wallet:0xa31b466AAbbe935ef57fb891dd08aC826fb4Cf5b<br>
           <button type="https://wa.me/2348063001626">Submit</button>
         </form>
     </div>
+
+    <script src="main.js"></script>
+    <script>
+
+      // function getConversionRate() {
+      //   var fromCoin = document.getElementById('fromCoin').value;
+      //   var toCoin = document.getElementById('toCoin').value;
+      //   var url = 'https://api.example.com/convert?from=' + fromCoin + '&to=' + toCoin;
+  
+      //   $.ajax({
+      //     url: url,
+      //     type: 'GET',
+      //     success: function(response) {
+      //       var rate = response.rate;
+      //       var result = 'Conversion Rate: 1 ' + fromCoin + ' = ' + rate + ' ' + toCoin;
+      //       document.getElementById('conversionRate').innerHTML = result;
+            
+      //     },
+      //     error: function() {
+      //       document.getElementById('conversionRate').innerHTML = 'Error retrieving conversion rate.';
+      //       event.preventDefault();
+      //     }
+          
+      //   });
+      // }
+    </script>
 </body>
 </html>

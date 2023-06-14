@@ -51,7 +51,7 @@ function displayUsername(username) {
         console.error("Error signing out:", error);
       });
       event.preventDefault(); // Prevent form submission
-      window.location.href = "login2.html";
+      window.location.href = "index.html";
 
     
     });

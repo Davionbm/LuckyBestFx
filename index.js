@@ -160,7 +160,7 @@ signUpForm.addEventListener('submit', function(event) {
       }
       
       // Redirect to another page
-    window.location.href = "index.html";
+    window.location.href = "dashboard.html";
 
     
     
@@ -281,7 +281,7 @@ signInForm.addEventListener('submit', function(event) {
       console.log("User signed in:", user);
       // Perform further actions if needed
       // Redirect to another page
-       window.location.href = "index.html";
+       window.location.href = "dashboard.html";
     })
     .catch(function(error) {
       // Handle errors during user sign-in
