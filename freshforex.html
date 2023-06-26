@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-     
-
-
       $(document).ready(function() {
         // Fetch exchange rates from an API or use a reliable source
         // Replace API_ENDPOINT with the appropriate API endpoint
@@ -42,11 +39,26 @@
             // Display the results
             $("#nairaAmount").text(nairaAmount.toFixed(2) + " NGN");
             $("#coinAmount").text(coinAmount.toFixed(2) + " Coin");
-            event.preventDefault();
+            
           });
         });
       });
     </script>
+    
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <style>
+      #payButton{
+        padding: 0;
+        padding: 10px 20px;
+      }
+
+      #convertButton{
+        padding: 0;
+        padding: 10px 20px;
+      }
+
+    </style>
 </head>
 <body>
     <div id="wrapper">
@@ -75,9 +87,31 @@
           <h2>Converted Amounts:</h2>
           <p id="nairaAmount"></p>
           <p id="coinAmount"></p>
-          <input type="file" id="upload"><br><span>Upload Proof of payment</span>
-          <button type="https://wa.me/2348063001626">Submit</button>
+          <input type="file" id="upload"><br><span>Upload Proof of payment</span><br>
+          <button id="payButton" onclick="payWithPaystack()">Pay with Paystack</button>
         </form>
     </div>
+
+    <script>
+      var payButton = document.getElementById('payButton');
+      payButton.addEventListener('click', function() {
+        var handler = PaystackPop.setup({
+          // key: 'pk_live_e9f4aa4ef1a09c5e2b72d0d5c59eb9864605522b',
+          email: 'customer@example.com',
+          amount: 200000, // Amount in kobo
+          currency: 'NGN',
+          callback: function(response) {
+            // This function is called after a successful payment
+            alert('Payment successful. Transaction reference: ' + response.reference);
+          },
+          onClose: function() {
+            // This function is called when the Paystack dialog is closed
+            alert('Payment window closed.');
+          }
+        });
+        handler.openIframe();
+      });
+    </script>
+    <!-- <script src="index3.js"></script> -->
 </body>
 </html>

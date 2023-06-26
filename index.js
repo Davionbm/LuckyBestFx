@@ -18,6 +18,7 @@ const database = firebase.database()
 // set up our register function
 function register () {
   
+  
   // Get all our input fields
   // full_name = document.getElementById('full_name').value
   // email = document.getElementById('email').value
@@ -160,8 +161,10 @@ signUpForm.addEventListener('submit', function(event) {
       }
       
       // Redirect to another page
+       showLoader();
+       
     window.location.href = "dashboard.html";
-
+hideLoader();
     
     
     })
