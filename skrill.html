@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <link rel="stylesheet" href="login.css">
     <style>
       #payButton{
@@ -66,8 +67,8 @@
         <form id="login-side" class="form">
           <h1>Skrill</h1>
           <div class="split">
-          <input type="email" placeholder="Account Number">
-          <input type="password" placeholder="Phone Number">
+            <input type="email" id="email" placeholder="Email">
+            <input type="num" id="amount" placeholder="Amount">
           <input type="text" id="wallet_id" placeholder="Wallet ID">
          </div>
           <h5>Bank Name<br>
@@ -88,8 +89,35 @@
           <p id="nairaAmount"></p>
           <p id="coinAmount"></p>
           <input type="file" id="upload"><br><span>Upload Proof of payment</span>
-          <button type="https://wa.me/2348063001626">Submit</button>
+          <button type="button" onclick="payWithPaystack()">Pay Now</button>
         </form>
     </div>
+
+    <script>
+      function payWithPaystack() {
+    var email = document.getElementById('email').value;
+    var amount = document.getElementById('amount').value * 100; // Paystack amount is in kobo (1 NGN = 100 kobo)
+  
+    var handler = PaystackPop.setup({
+      key: 'pk_live_e9f4aa4ef1a09c5e2b72d0d5c59eb9864605522b', // Replace with your Paystack public key
+      email: email,
+      amount: amount,
+      currency: 'NGN', // Change to your preferred currency
+      ref: Math.floor((Math.random() * 1000000000) + 1), // Generate a unique reference number
+      callback: function(response) {
+        // This function executes after a successful payment
+        alert('Payment successful. Transaction reference: ' + response.reference);
+        // You can perform additional actions here, such as updating your database
+      },
+      onClose: function() {
+        // This function executes when the Paystack dialog is closed
+        alert('Payment canceled');
+      }
+    });
+  
+    handler.openIframe(); // Open the Paystack payment dialog
+  }
+  
+  </script>
 </body>
 </html>
