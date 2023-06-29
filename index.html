@@ -65,6 +65,36 @@ W	Facebook: 		https://www.facebook.com/fh5co
 	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+
+	<style>
+		#loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loader {
+  border: 16px solid #333;
+  border-top: 16px solid #ffffff;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+	</style>
 	</head>
 	<body>
 	
@@ -881,6 +911,9 @@ W	Facebook: 		https://www.facebook.com/fh5co
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
+
+	
+	  
 	
     <script src="index2.js"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
@@ -912,6 +945,30 @@ W	Facebook: 		https://www.facebook.com/fh5co
 
 		</div>
 	</div>
+	<div id="loader-container">
+		<div id="loader"></div>
+		<p>Please Wait!</p>
+	  </div>
+
+	  <script>
+		function showLoader() {
+  document.getElementById('loader-container').style.display = 'flex';
+}
+
+function hideLoader() {
+  document.getElementById('loader-container').style.display = 'none';
+}
+
+// Show the loader
+showLoader();
+
+// Simulate a delay of 3 seconds
+setTimeout(function() {
+  // Hide the loader after the delay
+  hideLoader();
+}, 3000);
+
+	  </script>
 	</body>
 	<script type="module">
 		// Import the functions you need from the SDKs you need

@@ -65,6 +65,35 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+      <style>
+        #loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f1f1f1;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #loader {
+      border: 16px solid #333;
+      border-top: 16px solid #ffffff;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+      </style>
     </head>
 <body>
   
@@ -224,7 +253,7 @@
   
         <!-- <img src="Luckbest banner Artboard 1 copy 2.jpg"> -->
         <!-- <img src="Luckbest banner Artboard 1 copy 3.jpg"> -->
-        <a href="perfectmoney.html" target="_blank"><img src="Luckbest banner Artboard 1 copy 4.jpg"></a>
+        <a href="perfectmoney.html" target="_blank" ><img src="Luckbest banner Artboard 1 copy 4.jpg"></a>
         <!-- <img src="Luckbest banner Artboard 1 copy 5.jpg"> -->
         <a href="freshforex.html" target="_blank"><img src="Luckbest banner Artboard 1 copy 6.jpg"></a>
         <a href="airtm.html" target="_blank"><img src="Luckbest banner Artboard 1 copy 7.jpg"></a>
@@ -233,6 +262,31 @@
         <a href="crypto.html" target="_blank"><img src="Luckbest banner Artboard 1.jpg"></a>
       </div>
     </div>
+
+    <div id="loader-container">
+      <div id="loader"></div>
+      <h4 style="margin-left: 20px;">Please Wait!</h4>
+      </div>
+  
+      <script>
+      function showLoader() {
+    document.getElementById('loader-container').style.display = 'flex';
+  }
+  
+  function hideLoader() {
+    document.getElementById('loader-container').style.display = 'none';
+  }
+  
+  // Show the loader
+  showLoader();
+  
+  // Simulate a delay of 3 seconds
+  setTimeout(function() {
+    // Hide the loader after the delay
+    hideLoader();
+  }, 3000);
+  
+      </script>
   
     <script src="index.js"></script>
     <script src="index2.js"></script>
