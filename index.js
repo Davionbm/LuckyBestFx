@@ -275,6 +275,8 @@ signInForm.addEventListener('submit', function(event) {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
 
+
+  
   // Sign in user with email and password
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function(userCredential) {

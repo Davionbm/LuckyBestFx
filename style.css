@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -457,13 +457,13 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 .fh5co-social-icons li a {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   color: black;
   padding-left: 10px;
   padding-right: 10px;
@@ -591,8 +591,12 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-bg-section {
-  background: rgb(0 90 255);
+  background: #17252a;
   color: white;
+}
+
+svg{
+  color: #17252a;
 }
 
 #fh5co-services,
@@ -603,7 +607,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-about,
 #fh5co-contact,
 #fh5co-footer {
-  padding: 7em 0;
+  padding-top: 7em;
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -853,6 +857,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-heading .policy-h3{
   color: #fff;
+  text-align: start;
 }
 
 .fh5co-heading p {
@@ -886,7 +891,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 #fh5co-testimonial .testimony-slide figure img {
   width: 100px;
@@ -1009,11 +1014,11 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 100px;
+  padding-top: 20px;
 }
 
 #fh5co-footer {
-  background: #005aff;
+  background: #17252a;
   width: 100%;
 }
 #fh5co-footer .fh5co-footer-links {
@@ -1413,6 +1418,11 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .btn-outline:hover, .btn-outline:focus, .btn-outline:active {
   box-shadow: none;
+}
+
+.about-flex{
+  display: flex;
+  flex-direction: row;
 }
 
 .btn.with-arrow {
@@ -2054,6 +2064,17 @@ label span {
   border-radius: 15px;
   padding: 10px 10px;
   margin: 0 auto;
+  
+}
+
+.container h3{
+  text-align: center;
+}
+
+.container .footer-imgs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container-footer {
@@ -2070,7 +2091,7 @@ label span {
 
 .futer{
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 50px;
   font-size: 20px;
 }
 
@@ -2470,11 +2491,11 @@ label:after {
 }
 
 .top{
-  background-color: black;
+  background-color: #17252a;
 }
 
 .top-menu{
-  background-color: #000;
+  background-color: #17252a;
 }
 
 .main-wrapper{
@@ -2580,7 +2601,7 @@ button {
 	display: block;
 	margin: 2% auto 0;
 	border: none;
-	background: #1574c3;
+	background: #3aafa9;
 	padding: 10px 175px;
 	color: #fff;
 	text-transform: uppercase;
