@@ -5,21 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <script src="https://js.paystack.co/v1/inline.js"></script>
     <link rel="stylesheet" href="login.css">
-    <style>
-      #payButton{
-        padding: 0;
-        padding: 10px 20px;
-      }
-
-      #convertButton{
-        padding: 0;
-        padding: 10px 20px;
-      }
-
-    </style>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script>
      
 
@@ -60,26 +49,95 @@
         });
       });
     </script>
+    <style>
+      .answer p{
+        font-size: small;
+        
+      }
+      #payButton{
+        padding: 0;
+        padding: 10px 20px;
+      }
+
+      #convertButton{
+        padding: 0;
+        padding: 10px 20px;
+      }
+
+    </style>
 </head>
 <body>
+ 
+  
     <div id="wrapper">
         <!-- Login Form -->
         <form id="login-side" class="form">
-          <h1>Airtm</h1>
-          <div class="split">
+          <h1>Crypto</h1>
+          <!-- <div class="split">
             <input type="email" id="email" placeholder="Email">
             <input type="num" id="amount" placeholder="Amount">
           <input type="text" id="wallet_id" placeholder="Wallet ID">
-         </div>
-          <!-- <h5>Bank Name<br>
+         </div> -->
+          <h5>Bank Name<br>
             <span>GTBank</span><br>
 
             Account Name<br>
-            <span>Data Energy</span><br>
+            <span>Gabriel Gbenga Samson</span><br>
             
             Account Number<br> 
-              <span>0038738570</span><br>
-          </h5> -->
+              <span>0660553057</span><br>
+
+              <!-- <section class="faq-sec container" id="faq" > 
+                <h2 class="title">FAQs</h2>  -->
+ 
+                <div class="faq"> 
+                        <div class="question"> 
+                                <h4>Crypto Wallets</h4> 
+ 
+                                <svg width="15" height="10" viewBox="0 0 42 25"> 
+                                        <path  
+                                        d="M3 3L21 21L39 3"  
+                                        stroke="white"  
+                                        stroke-width="7"  
+                                        stroke-linecap="round" 
+                                        /> 
+                                </svg> 
+                        </div> 
+ 
+                        <div class="answer"> 
+                                <p> 
+                                      BTC Wallet:  3KmaqDfdCJs9zfcaPCUW55ykqMgwTNdffk<br>
+                                      Network:BTC (Minimum deposit 0.0001BTC)
+                                </p> 
+
+<p>ETH wallet:  0xB039f00f371A63aAb63aC0544bC5ee40e641a0cd<br>
+             network: ERC20 (Minimum deposit 0.005ETH)
+</p>
+
+<p>
+USDT: wattelt  TV3oQ7y5TXa49Zru9bwHJWEaggLM3qB8S9<br>
+             Network: TRC20 (Minimum deposit 5USDT)
+</p>
+
+<p>ETH wallet:  0xB039f00f371A63aAb63aC0544bC5ee40e641a0cd<br>
+             network: ERC20 (Minimum deposit 0.005ETH)
+</p>
+
+<p>
+BNB wallet:0xa31b466AAbbe935ef57fb891dd08aC826fb4Cf5b<br>
+             network: BEP20 (Minimum deposit 0.02BNB)
+</p>
+                        </div> 
+                </div>
+              
+          </h5> 
+          <!-- <label for="dollarAmount">Enter Dollar Amount:</label>
+          <input type="number" id="dollarAmount">
+          <button id="convertButton">Convert</button>
+          <h2>Converted Amounts:</h2>
+          <p id="nairaAmount"></p>
+          <p id="coinAmount"></p> -->
+
           <!-- <label for="dollarAmount">Enter Dollar Amount:</label>
           <input type="number" id="dollarAmount">
           <button id="convertButton">Convert</button>
@@ -91,6 +149,7 @@
         </form>
     </div>
 
+    
     <script>
       function payWithPaystack() {
     var email = document.getElementById('email').value;
@@ -117,5 +176,30 @@
   }
   
   </script>
+  <script src="main.js"></script>
+    <script>
+
+      // function getConversionRate() {
+      //   var fromCoin = document.getElementById('fromCoin').value;
+      //   var toCoin = document.getElementById('toCoin').value;
+      //   var url = 'https://api.example.com/convert?from=' + fromCoin + '&to=' + toCoin;
+  
+      //   $.ajax({
+      //     url: url,
+      //     type: 'GET',
+      //     success: function(response) {
+      //       var rate = response.rate;
+      //       var result = 'Conversion Rate: 1 ' + fromCoin + ' = ' + rate + ' ' + toCoin;
+      //       document.getElementById('conversionRate').innerHTML = result;
+            
+      //     },
+      //     error: function() {
+      //       document.getElementById('conversionRate').innerHTML = 'Error retrieving conversion rate.';
+      //       event.preventDefault();
+      //     }
+          
+      //   });
+      // }
+    </script>
 </body>
 </html>

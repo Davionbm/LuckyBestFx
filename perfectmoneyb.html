@@ -24,7 +24,7 @@
      
 
 
-      $(document).ready(function() {
+     $(document).ready(function() {
         // Fetch exchange rates from an API or use a reliable source
         // Replace API_ENDPOINT with the appropriate API endpoint
         var API_ENDPOINT = "http://api.exchangeratesapi.io/v1/latest?access_key=f5139bbaa61365005f3d35d1f12b0dc1&format=1&_gl=1*1gidfwr*_ga*MTE4MzY1MDA0Ny4xNjg1MTM2NDIz*_ga_HGV43FGGVM*MTY4NTEzNjQyMy4xLjEuMTY4NTEzNjk5Mi40NC4wLjA.";
@@ -65,28 +65,31 @@
     <div id="wrapper">
         <!-- Login Form -->
         <form id="login-side" class="form">
-          <h1>Airtm</h1>
-          <div class="split">
+          <h1>Perfect Money</h1>
+          <!-- <div class="split">
             <input type="email" id="email" placeholder="Email">
             <input type="num" id="amount" placeholder="Amount">
-          <input type="text" id="wallet_id" placeholder="Wallet ID">
-         </div>
-          <!-- <h5>Bank Name<br>
+            <input type="text" id="wallet_id" placeholder="Wallet ID">
+         </div> -->
+          <h5>Bank Name<br>
             <span>GTBank</span><br>
 
             Account Name<br>
-            <span>Data Energy</span><br>
+            <span>Gabriel Gbenga Samson
+            </span><br>
             
             Account Number<br> 
-              <span>0038738570</span><br>
-          </h5> -->
+              <span>0660553057</span><br>
+
+            Wallet ID<br><span>U27642583</span>
+          </h5>
           <!-- <label for="dollarAmount">Enter Dollar Amount:</label>
           <input type="number" id="dollarAmount">
           <button id="convertButton">Convert</button>
           <h2>Converted Amounts:</h2>
           <p id="nairaAmount"></p>
-          <p id="coinAmount"></p>
-          <input type="file" id="upload"><br><span>Upload Proof of payment</span> -->
+          <p id="coinAmount"></p> -->
+          <!-- <input type="file" id="upload"><br><span>Upload Proof of payment</span> -->
           <button type="button" onclick="payWithPaystack()">Pay Now</button>
         </form>
     </div>
