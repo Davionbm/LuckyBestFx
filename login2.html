@@ -68,6 +68,34 @@ W	Facebook: 		https://www.facebook.com/fh5co
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 
+
+
+    <style>
+		/* CSS for the loading indicator */
+#loadingIndicator {
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #3498db; /* Change this to your desired spinner color */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes for the spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+	</style>
 	</head>
 	<body>
 	
@@ -170,7 +198,8 @@ W	Facebook: 		https://www.facebook.com/fh5co
               <h1>Log in to TradeNaira<br> Exchange Platform</h1>
               <input type="email" id="email" placeholder="Your Email">
               <input type="password" id="password" placeholder="Your Password" required minlength="8">
-              <button type="submit" onclick="login(loginForm)">Submit</button>
+              <button type="submit" onclick="login(loginForm)" id="myButton" onclick="handleButtonClick()">Submit</button>
+			  <span id="loadingIndicator" class="hidden"></span>
               <p class="switch-animation">Don't have an account? <a href="login.html">Sign up</a></p>
             </form>
             <!-- Sign Up Form -->
@@ -189,6 +218,27 @@ W	Facebook: 		https://www.facebook.com/fh5co
 
 		<script src="index.js"></script>
 		<script>
+            function handleButtonClick() {
+  const button = document.getElementById('myButton');
+  const loadingIndicator = document.getElementById('loadingIndicator');
+
+  // Disable the button to prevent multiple clicks
+  button.disabled = true;
+
+  // Show the loading indicator
+  loadingIndicator.classList.remove('hidden');
+
+  // Simulate a delay or your actual logic
+  setTimeout(() => {
+    // Hide the loading indicator
+    loadingIndicator.classList.add('hidden');
+
+    // Enable the button after the operation is complete
+    button.disabled = false;
+  }, 2000); // Replace 2000 with the actual time it takes for your operation to complete
+}
+
+
 			function login(loginForm){
 				if(loginForm.username.value && loginForm.password.value){
 					var username=document.getElementById("username").value;
